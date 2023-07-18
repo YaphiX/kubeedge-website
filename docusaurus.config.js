@@ -45,7 +45,7 @@ const config = {
           showLastUpdateTime: true,
         },
         gtag: {
-          trackingID: ' G-9PL5BPEXGS',
+          trackingID: "G-9PL5BPEXGS",
           anonymizeIP: true,
         },
         blog: {
@@ -87,6 +87,7 @@ const config = {
             label: "Documentation",
           },
           { to: "/blog", label: "Blog", position: "left" },
+          { to: "/showcase", label: "Showcase", position: "left" },
           {
             to: "https://github.com/kubeedge/kubeedge/releases",
             label: "Downloads",
@@ -149,6 +150,7 @@ const config = {
 
   plugins: [
     [require.resolve("./src/plugins/blogGlobalData/index.js"), {}],
+    [require.resolve("./src/plugins/showCaseGlobalData/index.js"), {}],
     "docusaurus-plugin-sass",
   ],
 };
