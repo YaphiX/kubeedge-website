@@ -12,34 +12,34 @@ const pluginContentPage = require("@docusaurus/plugin-content-blog");
  * @param {import('@docusaurus/types').LoadContext} context
  * @returns {import('@docusaurus/types').Plugin}
  */
-async function showcaseGlobalDataPlugin(context, options) {
+async function casestudiesGlobalDataPlugin(context, options) {
   const currentLocale = context.i18n.currentLocale;
-  const showCaseDir =
+  const caseStudiesDir =
     currentLocale === "zh"
       ? path.join(context.siteDir, "i18n/zh/docusaurus-plugin-content-page")
-      : path.join(context.siteDir, "src/pages/showcase");
-  const showcasePlugin = await pluginContentPage.default(context, {
+      : path.join(context.siteDir, "src/pages/casestudies");
+  const casestudiesPlugin = await pluginContentPage.default(context, {
     ...options,
-    routeBasePath: "showcase",
-    path: showCaseDir,
-    id: "showcaseGlobalDataPlugin",
+    routeBasePath: "casestudies",
+    path: caseStudiesDir,
+    id: "casestudiesGlobalDataPlugin",
   });
 
   return {
-    name: "showcase-global-dataPlugin",
+    name: "casestudies-global-dataPlugin",
     async loadContent() {
-      const content = await showcasePlugin.loadContent();
+      const content = await casestudiesPlugin.loadContent();
 
       return content;
     },
     contentLoaded({ content, actions }) {
       const { setGlobalData } = actions;
 
-      setGlobalData({ showcaseGlobalData: content.blogPosts });
+      setGlobalData({ casestudiesGlobalData: content.blogPosts });
     },
   };
 }
 
-showcaseGlobalDataPlugin.validateOptions = pluginContentPage.validateOptions;
+casestudiesGlobalDataPlugin.validateOptions = pluginContentPage.validateOptions;
 
-module.exports = showcaseGlobalDataPlugin;
+module.exports = casestudiesGlobalDataPlugin;

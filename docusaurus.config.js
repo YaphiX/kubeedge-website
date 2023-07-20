@@ -87,7 +87,7 @@ const config = {
             label: "Documentation",
           },
           { to: "/blog", label: "Blog", position: "left" },
-          { to: "/showcase", label: "Showcase", position: "left" },
+          { to: "/casestudies", label: "Case Studies", position: "left" },
           {
             to: "https://github.com/kubeedge/kubeedge/releases",
             label: "Downloads",
@@ -150,7 +150,7 @@ const config = {
 
   plugins: [
     [require.resolve("./src/plugins/blogGlobalData/index.js"), {}],
-    [require.resolve("./src/plugins/showCaseGlobalData/index.js"), {}],
+    [require.resolve("./src/plugins/caseStudiesGlobalData/index.js"), {}],
     "docusaurus-plugin-sass",
   ],
 };

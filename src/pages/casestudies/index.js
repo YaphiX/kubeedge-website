@@ -6,18 +6,18 @@ import CaseCard from "@site/src/components/caseCard";
 import Translate from "@docusaurus/Translate";
 import "./index.scss";
 
-export default function ShowCase() {
-  const { showcaseGlobalData } = usePluginData("showcase-global-dataPlugin");
+export default function CaseStudies() {
+  const { casestudiesGlobalData } = usePluginData("casestudies-global-dataPlugin");
 
   return (
     <Layout>
-      <div className="case-center-container">
+      <div className="case-studies-container">
         <h1>
-          <Translate>Case Center</Translate>
+          <Translate>Case Studies</Translate>
         </h1>
         <div className="case-list">
           <Row gutter={[24, 24]}>
-            {showcaseGlobalData.map((item) => (
+            {casestudiesGlobalData.map((item) => (
               <Col sm={24} md={12} lg={6}>
                 <CaseCard
                   title={item.metadata?.title}
