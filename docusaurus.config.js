@@ -89,6 +89,17 @@ const config = {
           { to: "/blog", label: "Blog", position: "left" },
           { to: "/casestudies", label: "Case Studies", position: "left" },
           {
+            type: 'dropdown',
+            label: 'Community',
+            position: 'left',
+            items: [
+              {
+                label: 'Job',
+                to: "/job",
+              },
+            ],
+          },
+          {
             to: "https://github.com/kubeedge/kubeedge/releases",
             label: "Downloads",
             position: "left",
