@@ -14,6 +14,12 @@
   "item.label.Case Studies": {
     "message": "案例中心"
   },
+  "item.label.Community": {
+    "message": "社区"
+  },
+  "item.label.Job Center": {
+    "message": "招聘中心"
+  },
   "item.label.Downloads": {
     "message": "下载",
     "description": "Navbar item with label Downloads"

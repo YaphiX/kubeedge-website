@@ -87,15 +87,15 @@ const config = {
             label: "Documentation",
           },
           { to: "/blog", label: "Blog", position: "left" },
-          { to: "/casestudies", label: "Case Studies", position: "left" },
+          { to: "/case-studies", label: "Case Studies", position: "left" },
           {
             type: 'dropdown',
             label: 'Community',
             position: 'left',
             items: [
               {
-                label: 'Job',
-                to: "/job",
+                label: 'Job Center',
+                to: "/job-center",
               },
             ],
           },
@@ -162,6 +162,7 @@ const config = {
   plugins: [
     [require.resolve("./src/plugins/blogGlobalData/index.js"), {}],
     [require.resolve("./src/plugins/caseStudiesGlobalData/index.js"), {}],
+    [require.resolve("./src/plugins/jobCenterGlobalData/index.js"), {}],
     "docusaurus-plugin-sass",
   ],
 };
