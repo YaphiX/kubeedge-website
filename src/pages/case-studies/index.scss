@@ -1,8 +1,27 @@
 .case-studies-container {
   padding: 10px;
 
-  .case-card {
-    width: 100%;
-    height: 100%;
+  .case-studies-header {
+    // text-align: center;
+    // height: 500px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    // font-size: 32px;
+    // font-weight: 600;
+    // background-image: url('/img/casestudies/demo.jpg');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+  }
+
+  .case-list {
+    padding: 50px;
+
+
+    .case-card {
+      width: 100%;
+      height: 100%;
+    }
   }
 }

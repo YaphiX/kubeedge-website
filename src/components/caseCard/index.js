@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "@docusaurus/router";
-import "./styles.scss";
+import "./styles.scss"; 
 
 export default function CaseCard(props) {
   const {
@@ -16,9 +16,11 @@ export default function CaseCard(props) {
 
   return (
     <div className="case-card" onClick={() => history.push(link)}>
-      <div className="image">
+      {/* <div className="image">
         <img src={imgUrl} />
-      </div>
+      </div> */}
+      <div className="background" />
+      
       <div className="title">
         <div className="main">
           <h2>{title}</h2>
