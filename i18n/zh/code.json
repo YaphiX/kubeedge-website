@@ -371,5 +371,20 @@
   },
   "Case Studies": {
     "message": "KubeEdge成功案例"
+  },
+  "READ CASE STUDY": {
+    "message": "阅读案例"
+  },
+  "Case Category": {
+    "message": "案例类别"
+  },
+  "Case Studies description": {
+    "message": "案例中心描述"
+  },
+  "post your case": {
+    "message": "上传你的案例"
+  },
+  "Job Center": {
+    "message": "招聘中心"
   }
 }

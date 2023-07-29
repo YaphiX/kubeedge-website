@@ -1,44 +1,55 @@
 .case-card {
-  width: 300px;
-  height: 330px;
-  border-radius: 8px;
-  background-color: rgb(247, 247, 247);
+  min-height: 280px;
+  min-width: 35px;
+  border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  overflow: hidden;
-  transition: transform ease 0.2s;
-
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.02);
-  }
-
-  .image {
-    width: 100%;
-    height: 150px;
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
+  display: grid;
+  grid-template-areas:
+    "title desc"
+    "hr desc"
+    "sub desc"
+    "sub desc"
+    "date btn";
+  grid-template-columns: 6fr 5fr;
+  grid-template-rows: auto auto auto 1fr;
+  grid-column-gap: 40px;
+  padding: 36px;
 
   .title {
-    .main {
-      a {
-        &:hover {
-          cursor: pointer;
-        }
-      }
-    }
+    grid-area: title;
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 18px;
+    cursor: pointer;
+  }
 
-    .sub {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+  hr {
+    grid-area: hr;
+    background: #fff;
+    height: 4px !important;
+    width: 40px !important;
+    margin: 0;
+  }
+
+  .sub {
+    grid-area: sub;
+    font-size: 30px;
+    color: #62a1ff;
+    margin-top: 20px;
+  }
+
+  .date {
+    grid-area: date;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
   }
 
   .desc {
+    grid-area: desc;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 0.02em;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -50,10 +61,12 @@
     font-size: 12px;
   }
 
-  .tags {
-    display: flex;
-    gap: 5px;
-    font-size: 12px;
+  a {
+    grid-area: btn;
+    font-size: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #d62293;
   }
 }
 

@@ -3,28 +3,59 @@ import { Row, Col } from "antd";
 import Layout from "@theme/Layout";
 import { usePluginData } from "@docusaurus/useGlobalData";
 import CaseCard from "@site/src/components/caseCard";
+import TagToggle from "@site/src/components/tagToggle";
+import { CARD_BACKGROUND_IMAGE_URL } from "./const";
 import Translate from "@docusaurus/Translate";
 import "./index.scss";
 
 export default function CaseStudies() {
-  const { casestudiesGlobalData } = usePluginData("casestudies-global-dataPlugin");
+  const { casestudiesGlobalData } = usePluginData(
+    "casestudies-global-dataPlugin"
+  );
+  const [filters, setFilters] = React.useState();
+
+  const casestudiesGlobalDataMemo = React.useMemo(() => {
+    if (filters) {
+      return casestudiesGlobalData.filter((item) =>
+        (item.metadata?.frontMatter?.tags ?? []).includes(filters)
+      );
+    }
+
+    return casestudiesGlobalData;
+  }, [filters]);
 
   return (
     <Layout>
       <div className="case-studies-container">
-        <h1>
-          <Translate>Case Studies</Translate>
-        </h1>
+        <div className="case-studies-header">
+          <h1 className="case-studies">
+            <Translate>Case Studies</Translate>
+          </h1>
+          <p className="case-studies-subtitle">
+            <Translate>Case Studies description</Translate>
+          </p>
+          <button className="button" type="button">
+            <a href="https://github.com/kubeedge/website" target="_blank">
+              <Translate>post your case</Translate>
+            </a>
+          </button>
+        </div>
         <div className="case-list">
-          <Row gutter={[24, 24]}>
-            {casestudiesGlobalData.map((item) => (
-              <Col sm={24} md={12} lg={6}>
+          <TagToggle selected={filters} onChange={(e) => setFilters(e)} />
+          <Row gutter={[48, 48]}>
+            {casestudiesGlobalDataMemo.map((item, index) => (
+              <Col xs={24} sm={24} md={24} lg={12}>
                 <CaseCard
                   title={item.metadata?.title}
                   subTitle={item.metadata?.frontMatter?.subTitle}
                   date={item.metadata?.formattedDate}
                   desc={item.metadata?.description}
-                  imgUrl={item.metadata?.frontMatter?.background}
+                  imgUrl={
+                    item.metadata?.frontMatter?.background ||
+                    CARD_BACKGROUND_IMAGE_URL[
+                      index % CARD_BACKGROUND_IMAGE_URL.length
+                    ]
+                  }
                   link={item.metadata?.permalink}
                   tags={item.metadata?.frontMatter?.tags}
                 />
