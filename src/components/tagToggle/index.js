@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { TagTypeEN, TagTypeZH } from "./const";
+import { TAG_Type_EN, TAG_TYPE_ZH } from "@site/src/const";
 import Translate from "@docusaurus/Translate";
 import "./index.scss";
 
@@ -10,10 +10,10 @@ export default function TagToggle({ selected, onChange }) {
 
   const tagType = useMemo(() => {
     if (i18n.currentLocale === "en") {
-      return TagTypeEN;
+      return TAG_Type_EN;
     }
 
-    return TagTypeZH;
+    return TAG_TYPE_ZH;
   }, []);
 
   const handleOnclick = (tag, index) => {
@@ -29,7 +29,9 @@ export default function TagToggle({ selected, onChange }) {
   return (
     <div className="tag-toggle-container">
       <div className="tag-toggle-list">
-        <div className="title"><Translate>Case Category</Translate></div>
+        <div className="title">
+          <Translate>Case Category</Translate>
+        </div>
         <div className="tag-list">
           {tagType.map((tag, index) => (
             <div

@@ -4,7 +4,7 @@ import Layout from "@theme/Layout";
 import { usePluginData } from "@docusaurus/useGlobalData";
 import CaseCard from "@site/src/components/caseCard";
 import TagToggle from "@site/src/components/tagToggle";
-import { CARD_BACKGROUND_IMAGE_URL } from "./const";
+import { CARD_BACKGROUND_IMAGE_URL } from "@site/src/const";
 import Translate from "@docusaurus/Translate";
 import "./index.scss";
 
@@ -32,11 +32,11 @@ export default function CaseStudies() {
             <Translate>Case Studies</Translate>
           </h1>
           <p className="case-studies-subtitle">
-            <Translate>Case Studies description</Translate>
+            <Translate>Tell successful stories of using KubeEdge in various business scenarios and the positive effects brought by them</Translate>
           </p>
           <button className="button" type="button">
             <a href="https://github.com/kubeedge/website" target="_blank">
-              <Translate>post your case</Translate>
+              <Translate>POST YOUR CASE</Translate>
             </a>
           </button>
         </div>
